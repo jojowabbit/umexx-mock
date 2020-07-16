@@ -1,0 +1,117 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8vh;
+    z-index: 999;
+    transition: $transition;
+    padding: 4vh 5vw;
+
+    &__logo:link,
+    &__logo:visited {
+        text-transform: uppercase;
+        transition: $transition;
+        color: $color-gray--3;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+    &__toggle-menu:link,
+    &__toggle-menu:visited {
+        transition: $transition;
+        text-transform: capitalize;
+        color: $color-gray--3;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+    &__list {
+        position: absolute;
+        top: 8vh;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $color-gray-0;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding-left: 5vw;
+        opacity: 0;
+        transform: translateX(-1000rem);
+        transition: $transition;
+        
+        .sub__list {
+            list-style: none;
+            padding-left: 5vw;
+            .sub__item {
+                padding: 1rem;
+                border-left: .5rem solid $color-gray--3;
+                margin-top: 1vh;
+                .sub__link {
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                    &:hover {
+                        color: $color-secondary;
+                    }
+                }
+            }
+        }
+        .socials {
+            padding: 3rem;
+            margin-top: 1vh;
+            border-left: .5rem solid $color-secondary;
+            .social {
+                transition: $transition;
+                display: inline-block;
+                padding: 1rem;
+                margin: 0 1rem;
+                transition: $transition;
+                &:hover {
+                    border-top: .2rem solid $color-secondary;
+                    border-bottom: .2rem solid $color-secondary;
+                }
+
+                i {
+                    font-size: 2.5rem;
+                    color: $color-gray--3;
+
+                }
+            }
+
+        }
+    }
+    &__item {
+        padding: 1rem;
+        border-left: .5rem solid $color-secondary;
+        margin-top: 1rem;
+    }
+    &__link:link,
+    &__link:visited {
+        font-size: 2rem;
+        text-transform: uppercase;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}
+
+.nav__list.nav-active {
+    transform: translateX(0);
+    opacity: 1;
+}
+.nav.nav-active {
+    background-color: $color-gray-0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.nav.scrolling-active {
+    background-color: $color-gray-0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: $box-shadow;
+
+}

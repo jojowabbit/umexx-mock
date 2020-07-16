@@ -1,0 +1,105 @@
+.footer {
+    grid-column: full-start / full-end;
+    letter-spacing: .5rem;
+    line-height: 2;
+    display: grid;
+    place-items: center;
+    background-color: $color-gray-0;
+    grid-template-columns: repeat(2, minmax(max-content, 1fr));
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-columns: 1fr;
+        padding-top: 3rem;
+    }
+    & * > h6 {
+        text-transform: uppercase;
+        letter-spacing: .7rem;
+        color: $color-gray--1;
+    }
+    & * > a:link,
+    & * > a:visited {
+        font-size: 1.5rem;
+        letter-spacing: .3rem;
+    }
+    & * > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__logo {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        box-shadow: $box-shadow;
+        border: .5rem solid $color-secondary;
+        background-color: $color-gray--1;
+        
+    }
+    &__info {
+        padding: 1rem;
+        h6 {
+            text-align: center;
+        }
+        p {
+            strong {
+                text-transform: uppercase;
+                color: $color-secondary;
+            }
+        }
+        a:link,
+        a:visited {
+            font-size: 1.6rem;
+            color: $color-secondary;
+            
+        }
+        i {
+            padding-right: 1rem;
+            color: $color-secondary;
+        }
+    }
+    &__socials {
+        padding: 1rem;
+        h6 {
+            text-align: center;
+        }
+        .social {
+            transition: $transition;
+            display: inline-block;
+            padding: 1rem;
+            margin: 0 1rem;
+            transition: $transition;
+            border-bottom: .2rem solid $color-secondary;
+            &:hover {
+                border-top: .2rem solid $color-secondary;
+            }
+
+            i {
+                font-size: 2.5rem;
+            }
+        }
+
+    }
+
+    &__navigate {
+        padding: 1rem;
+        h6 {
+            text-align: center;
+        }
+        a:link,
+        a:visited {
+            border-bottom: .2rem solid $color-secondary;
+            padding: .3rem;
+            letter-spacing: .15rem;
+            display: inline-block;
+            &:hover {
+                border-top: .2rem solid $color-secondary;
+            }
+        }
+    }
+    &__legal {
+        padding: 1rem;
+        text-align: center;
+        grid-column: 1 / -1;
+        letter-spacing: .3rem;
+    }
+}

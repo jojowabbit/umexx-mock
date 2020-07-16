@@ -1,0 +1,161 @@
+// FONT FAMILY
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap');
+// COLORS VARIABLES
+
+
+$color-primary: #223c5c;
+$color-secondary: #fdcd09;
+$color-gray--3: #eeeeee;
+$color-gray--2: #bbbbbb;
+$color-gray--1: #888888;
+$color-gray-0: #333333;
+
+
+
+
+$box-shadow: 0 .4rem .6rem .0, $color-gray--1;
+$transition: all .4s ease;
+// FONTS VARIABLES
+$font-primary: 'Open Sans', sans-serif;
+// Paragraph
+$font-secondary: 'Merriweather', serif;
+
+// Typography
+%heading {
+    font-family: $font-secondary;
+    letter-spacing: .2rem;
+    text-transform: capitalize;
+    color: $color-gray-0;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 4.25rem;
+    line-height: 1;
+}
+
+.heading-2 {
+    @extend %heading;
+    font-size: 3.75rem;
+    line-height: 1;
+}
+
+.heading-3 {
+    @extend %heading;
+    font-size: 3.25rem;
+    line-height: 1;
+}
+
+.heading-4 {
+    @extend %heading;
+    font-size: 3rem;
+    line-height: 1.6;
+}
+
+.heading-5 {
+    @extend %heading;
+    font-size: 2.5rem;
+    line-height: 1.6;
+}
+.heading-6 {
+    @extend %heading;
+    font-size: 2rem;
+    line-height: 1.6;
+}
+
+// Margin Bottom Helper Class
+.mb-sm { margin-bottom: 2rem; }
+.mb-md { margin-bottom: 3rem; }
+.mb-lg { margin-bottom: 4rem; }
+.mb-hg { margin-bottom: 8rem; }
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px / 16
+$bp-large: 56.25em; // 900px / 16
+$bp-medium: 48em; // 768px / 16
+$bp-small: 37.5em; // 600px / 16
+$bp-smallest: 28em; //375px /16
+
+
+// GLOBAL RESET
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    @media only screen and (max-width: $bp-large) {
+        font-size: 57.5%;
+    }
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 50.5%;
+    }
+    @media only screen and (max-width: $bp-small) {
+        font-size: 45.5%;
+    }
+    
+}
+
+body {
+    font-family: $font-primary;
+    line-height: 1.6;
+    font-weight: 500;
+    color: $color-gray--1;
+}
+
+p {
+    font-size: 1.6rem;
+    color: $color-gray--1;
+}
+
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: $color-gray--1;
+
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    width: max-content;
+    letter-spacing: .2rem;
+    padding: 1rem 1.5rem;
+    transition: $transition;
+    border-radius: 5rem;
+
+    &:active {
+        transform: translateY(.2rem);
+    }
+    &--white {
+        color: $color-primary;
+        background-color: $color-gray--3;
+        &:hover {
+            color: $color-gray--3;
+            background-color: $color-primary;
+        }
+    }
+    
+} 
+
+.container {
+    display: grid;
+    grid-template-columns: [full-start] minmax(8rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(8rem, 1fr) [full-end];
+    overflow-x: hidden;
+    background-color: $color-gray--3;
+}
+

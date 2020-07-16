@@ -1,0 +1,42 @@
+.hero {
+    grid-column: full-start / full-end;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.2)), url(../images/c1.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    padding-top: 5vw;
+
+    &__text-box {
+        position: absolute;
+        top: 25%;
+        left: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        z-index: 30;
+        
+        @media only screen and (max-width: $bp-medium) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h1 {
+            line-height: 1.6;
+            font-size: 5rem;
+            text-transform: uppercase;
+            color: $color-gray--3;
+        }
+        p {
+            font-size: 3.25rem;
+            color: $color-gray--3;
+        }
+        a:link,
+        a:visited {
+            color: $color-gray-0;
+        }
+
+    }
+}
